@@ -5,7 +5,7 @@ The documents in the database can be maintained by simply editing json
 files.
 
     fs = require 'fs'
-    #findFiles = require '../jshelpers/find_files'
+    findFiles = require './jshelpers/find_files'
 
 ####Load Directory of files
 This will load all the files of type `model` recursing over the subdirectories.
