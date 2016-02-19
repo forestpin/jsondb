@@ -54,7 +54,13 @@ Loads a single file of type model
         new options.model {}, file: options.file
        return
       if options.model?
-       callback null, (new options.model data, file: options.file)
+       try
+        obj = new options.model data, file: options.file
+       catch e3
+        callback msg: "Error initializing model: #{options.file}", err: e3,
+         new options.model {}, file: options.file
+        return
+       callback null, obj
       else
        callback null, data
 
